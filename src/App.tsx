@@ -1,5 +1,4 @@
 import { Toaster } from "@/components/ui/toaster"
-import { TooltipProvider } from "@/components/ui/tooltip"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Feed from "@/Pagine/Feed"
 import Login from "@/Pagine/Login"
@@ -13,22 +12,20 @@ import Benvenuto from "@/Pagine/Benvenuto"
 
 function App() {
   return (
-    <TooltipProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Benvenuto />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/feed" element={<Feed />} />
-          <Route path="/profile/:id" element={<Profile />} />
-          <Route path="/create" element={<CreatePost />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/post/:id" element={<PostDetail />} />
-          <Route path="/edit-profile" element={<EditProfile />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Benvenuto />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/feed" element={<Feed />} />
+        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/create" element={<CreatePost />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/post/:id" element={<PostDetail />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
+      </Routes>
       <Toaster />
-    </TooltipProvider>
+    </BrowserRouter>
   )
 }
 
